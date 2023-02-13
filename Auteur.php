@@ -20,15 +20,21 @@ class Auteur{
 
     // Méthodes
 
+        // Ajouter livre
+
     public function addLivre(Livre $livre)
     {
         $this->_livres[] = $livre;
     }
 
+        // Information auteur
+
     public function infoAuteur()
     {
         echo "Le nom de l'auteur est " . $this->_prenom . " " . $this->_nom . "<br>";
     }
+
+        // Afficher Bibliographie
 
     public function afficherBibliographie()
     {
@@ -38,6 +44,7 @@ class Auteur{
         }
     }
 
+        // To string
 
     public function __toString()
     {

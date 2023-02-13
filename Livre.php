@@ -24,6 +24,8 @@ class Livre{
 
 // Méthodes
 
+    // Obtenir les infos des livres
+
 public function getBookInfo()
 {
     return $this->_titre . " (" . $this->_annee . ") : " . $this->_nombrepages . " pages / " . $this->_prix . "€";

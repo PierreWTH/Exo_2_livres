@@ -4,6 +4,7 @@ spl_autoload_register(function ($class_name) {
     require_once $class_name . '.php';
     });
 
+// Creation des instances
     
 $auteur1 = new Auteur("Stephen", "King");
 $auteur2 = new Auteur("Jean", "Valjean");
@@ -18,7 +19,4 @@ $livre5 = new Livre("Wolf Wall Street", 567, 2019, 30, $auteur2);
 
 $auteur2-> afficherBibliographie();
     
-
-
-
 ?>
