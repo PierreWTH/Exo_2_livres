@@ -9,7 +9,6 @@ class Livre{
     private int $_annee;
     private int $_prix;
     private Auteur $_auteur;
-    private array $_tableaulivre;
 
 // Construct
 
@@ -20,29 +19,16 @@ class Livre{
     $this->_annee = $annee;
     $this->_prix = $prix;
     $this->_auteur = $auteur;
-    $this-> _tableaulivre = [];
+    $auteur->addLivre($this);
     }
 
 // Méthodes
 
-
-
-public function addLivres(Livre $livre)
+public function getBookInfo()
 {
-    $this->_tableaulivre[] = $livre;
-
-}
-
-    public function afficherBibliographie()
-    {
-        echo "<h2> Livres de " .$this->_auteur."</h2>";
-        echo $this->_titre. " (" .$this->_annee.") : " .$this->_nombrepages." pages / " .$this->_prix." euros. ";
-
-    }
-
-    
+    return $this->_titre . " (" . $this->_annee . ") : " . $this->_nombrepages . " pages / " . $this->_prix . "€";
 }
    
-
+}
 
 ?>

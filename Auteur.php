@@ -7,7 +7,7 @@ class Auteur{
 
     private string $_prenom;
     private string $_nom;
-    
+    private array $_livres;
 
 // Construct
 
@@ -15,14 +15,27 @@ class Auteur{
     {
     $this->_prenom = $prenom;
     $this->_nom = $nom;
-    
+    $this->_livres = [];
     }
 
     // Méthodes
 
-    public function getInfos()
+    public function addLivre(Livre $livre)
     {
-        echo "Le nom de l'auteur est ".$this->_prenom." ".$this->_nom;
+        $this->_livres[] = $livre;
+    }
+
+    public function infoAuteur()
+    {
+        echo "Le nom de l'auteur est " . $this->_prenom . " " . $this->_nom . "<br>";
+    }
+
+    public function afficherBibliographie()
+    {
+        echo "<h2>Livres de " . $this->_prenom . " " . $this->_nom . "</h2>";
+        foreach ($this->_livres as $value) {
+            echo $value->getBookInfo() . "<br>";
+        }
     }
 
 
